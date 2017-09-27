@@ -554,9 +554,6 @@ int ft_getinfo(struct fi_info *hints, struct fi_info **info)
 	if (ret)
 		return ret;
 
-	if (!hints->ep_attr->type)
-		hints->ep_attr->type = FI_EP_RDM;
-
 	ret = fi_getinfo(FT_FIVERSION, node, service, flags, hints, info);
 	if (ret) {
 		FT_PRINTERR("fi_getinfo", ret);
